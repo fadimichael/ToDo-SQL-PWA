@@ -1,0 +1,191 @@
+.phone-outer-wrapper .phone-screen {
+  width: 100%;
+  background-color: black;
+  height: 100%;
+  border-radius: 0 0 45px 45px;
+  position: relative;
+  overflow: hidden;
+}
+
+.phone-outer-wrapper .phone-screen:after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 125px;
+  height: 5px;
+  position: absolute;
+  bottom: 13px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+.tab-bar {
+  width: 100%;
+  background-color: #fefcfe;
+  padding: 0 20px 25px 20px;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  border-radius: 0 0 30px 30px;
+  justify-content: space-between;
+  -webkit-border-radius: 0 0 30px 30px;
+  -moz-border-radius: 0 0 30px 30px;
+  -ms-border-radius: 0 0 30px 30px;
+  -o-border-radius: 0 0 30px 30px;
+}
+
+.tab-bar .tab-indicator {
+  position: absolute;
+  background-color: black;
+  width: 100px;
+  height: 65px;
+  border-radius: 0 0 50px 50px;
+  z-index: 1;
+  transform: translateX(155px);
+  transition: transform 0.3s ease-out;
+  -webkit-border-radius: 0 0 50px 50px;
+  -moz-border-radius: 0 0 50px 50px;
+  -ms-border-radius: 0 0 50px 50px;
+  -o-border-radius: 0 0 50px 50px;
+  -webkit-transform: translateX(155px);
+  -moz-transform: translateX(155px);
+  -ms-transform: translateX(155px);
+  -o-transform: translateX(155px);
+}
+
+.tab-bar .tab-indicator .tab-indicator-left,
+.tab-bar .tab-indicator .tab-indicator-right {
+  background-color: black;
+  height: 25px;
+  width: 25px;
+  position: absolute;
+}
+
+.tab-bar .tab-indicator .tab-indicator-left:after,
+.tab-bar .tab-indicator .tab-indicator-right:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #fefcfe;
+  display: block;
+}
+
+.tab-bar .tab-indicator .tab-indicator-left {
+  left: -25px;
+}
+
+.tab-bar .tab-indicator .tab-indicator-left:after {
+  border-radius: 0 25px 0 0;
+}
+
+.tab-bar .tab-indicator .tab-indicator-right {
+  right: -25px;
+}
+
+.tab-bar .tab-indicator .tab-indicator-right:after {
+  border-radius: 40px 0 0 0;
+  -webkit-border-radius: 40px 0 0 0;
+  -moz-border-radius: 40px 0 0 0;
+  -ms-border-radius: 40px 0 0 0;
+  -o-border-radius: 40px 0 0 0;
+}
+
+.tab-bar .tab-item {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+  width: 70px;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  outline: none !important;
+}
+
+.tab-bar .tab-item .tab-item-inner {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85px;
+  width: 85px;
+  border-radius: 50%;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  -moz-transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  -ms-transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  -o-transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.tab-bar .tab-item .tab-item-inner svg {
+  width: 50%;
+  transition: fill 0.2s ease-out 0.2s;
+  -webkit-transition: fill 0.2s ease-out 0.2s;
+  -moz-transition: fill 0.2s ease-out 0.2s;
+  -ms-transition: fill 0.2s ease-out 0.2s;
+  -o-transition: fill 0.2s ease-out 0.2s;
+}
+
+.tab-bar .tab-item .tab-item-inner svg * {
+  stroke: #bbb;
+}
+
+.tab-bar .tab-item.active .tab-item-inner {
+  transform: translateY(-30px);
+  transition-delay: 0.2s;
+  background-color: #fefcfe;
+  z-index: 2;
+  box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.25);
+  -webkit-transform: translateY(-30px);
+  -moz-transform: translateY(-30px);
+  -ms-transform: translateY(-30px);
+  -o-transform: translateY(-30px);
+}
+
+.tab-bar .tab-item.active .tab-item-inner svg * {
+  stroke: #333;
+  opacity: 0;
+  animation: draw 0.8s linear forwards 0.2s;
+}
+
+.tab-item.active #home * {
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+}
+
+.tab-item.active #calendar * {
+  color: white;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+
+.tab-item.active #add * {
+
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+
+.tab-item.active #settings * {
+  stroke-dasharray: 415;
+  stroke-dashoffset: 415;
+}
+
+
+
+.tab-item.active #profile * {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
